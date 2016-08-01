@@ -24,7 +24,7 @@
     `private Path pathG;//路径`
 
 
-    //初始化方法
+    `//初始化方法
     private void initial() {
     paintB = new Paint();
     paintB.setStyle(Paint.Style.STROKE);
@@ -44,12 +44,12 @@
     pathG.addArc(rectF, -90, 360);
     
     doAnimator();
-    }
+    }`
 
 
 - #### 设置属性动画 ####
 
-
+`
     private void doAnimator() {
     ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 360f);
     valueAnimator.addUpdateListener(new addUpdate());
@@ -72,6 +72,7 @@
     invalidate();
     }
     }
+    `
 
 
 
