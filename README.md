@@ -42,3 +42,36 @@
         doAnimator();
     }
 ```
+
+- #### 设置属性动画 
+
+```groovy
+    private void doAnimator() {
+    	ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, 360f);
+    	valueAnimator.addUpdateListener(new addUpdate());
+    	valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+    	valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
+    	valueAnimator.setDuration(3000);
+    	valueAnimator.start();
+    }
+```
+
+```groovy
+    class addUpdate implements ValueAnimator.AnimatorUpdateListener {
+    	@Override
+    	public void onAnimationUpdate(ValueAnimator animation) {
+    	value = (float) animation.getAnimatedValue();
+    	if (value - last > 0.0) {
+    		isState = true;
+    	} else {
+    		isState = false;
+    	}
+    		last = value;
+    		invalidate();
+    	}
+    }
+```
+
+
+我写得很简单，只是把基本做好了，没有去计算大小，位置这些，写得是固定值，可以自己去改。推荐一篇大神的博客，里面有讲动画和自定义控件，讲的通俗易懂，写得很好[http://blog.csdn.net/harvic880925/article/details/50995268](http://blog.csdn.net/harvic880925/article/details/50995268)
+
