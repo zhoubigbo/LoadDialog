@@ -18,3 +18,27 @@
     `private boolean isState = false;//状态`
 
     `private Path pathG;//路径`
+
+```groovy
+    //初始化
+    private void initial() {
+        paintB = new Paint();
+        paintB.setStyle(Paint.Style.STROKE);
+        paintB.setAntiAlias(true);
+        paintB.setStrokeWidth(6);
+        paintB.setColor(Color.BLACK);
+
+        paintG = new Paint();
+        paintG.setStyle(Paint.Style.STROKE);
+        paintG.setAntiAlias(true);
+        paintG.setStrokeWidth(6);
+        paintG.setColor(Color.parseColor("#EEEEEE"));
+
+        rectF = new RectF(10, 10, 200, 200);
+
+        pathG = new Path();
+        pathG.addArc(rectF, -90, 360);
+
+        doAnimator();
+    }
+```
