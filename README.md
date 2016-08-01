@@ -43,7 +43,7 @@
     }
 ```
 
-- #### 设置属性动画 
+- 设置属性动画 
 
 ```groovy
     private void doAnimator() {
